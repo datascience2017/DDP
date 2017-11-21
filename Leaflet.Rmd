@@ -1,0 +1,37 @@
+---
+title: "Washington DC map using Leaflet"
+keep_md: yes
+output:
+  html_document: default
+  keep_md: yes
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+##November 20, 2017
+
+This map displays the White House, Capitol Building and Museum of National Archives with link to its websites.
+
+```{r, echo = TRUE}
+library(leaflet)
+
+DC <- data.frame(
+  lat = c(38.8977,38.889931, 38.8928),
+  lng = c(- 77.0365,-77.009003, -77.0230))
+
+
+DCsites <- c(
+   "<a href='https://www.whitehouse.gov/'>The White House</a>",
+    "<a href='https://www.visitthecapitol.gov/'>Capitol Hill Building</a>",
+   "<a href='https://www.archives.gov/museum/visit/'>Museum of National Archives</a>")
+
+DC %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(popup=DCsites)
+```
+
+http://rpubs.com/datascience2017Coursera/332563
