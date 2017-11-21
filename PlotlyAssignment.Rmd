@@ -1,23 +1,36 @@
 ---
 title: "US Expenditure from 1940 till 1960"
-output: slidy_presentation
-
-  
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
 ---
 ## November 20,2017
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(plotly)
-library(tidyr)
 ```
 This data set consists of United States personal expenditures (in billions of dollars) in the categories; food and tobacco, household operation, medical and health, personal care, and private education for the years 1940, 1945, 1950, 1955 and 1960.
-Used tidyr to transform data from wide to long format
-```{r, echo= TRUE}
+
+Used tidyr to transform data from wide to long format. 
+
+**Please hover over the markers to view data.**
+
+```{r, echo= FALSE, warning=FALSE}
+suppressMessages(library(plotly))
+suppressMessages(library(tidyr))
+Exp <- as.data.frame(USPersonalExpenditure)
+d <- Exp %>% mutate(Category=as.factor(rownames(Exp))) %>% gather(year,Category) 
+colnames(d)= c("Category", "Year", "Expense")
+plot_ly(d, x = ~Year, y = ~Expense, color = ~Category, size = ~Expense, type = "scatter", mode = "markers", 
+        text=~paste("Year: ", Year, '<br>Expense USD', Expense))
+```
+Appendix
+```{r, echo = TRUE}
+library(plotly)
+library(tidyr)
 datasets::USPersonalExpenditure
 Exp <- as.data.frame(USPersonalExpenditure)
 d <- Exp %>% mutate(Category=as.factor(rownames(Exp))) %>% gather(year,Category) 
 colnames(d)= c("Category", "Year", "Expense")
-plot_ly(d, x = ~Year, y = ~Expense, color = ~Category, size = ~Expense, type = "scatter", mode = "lines")
 ```
 
 http://rpubs.com/datascience2017Coursera/332672
