@@ -5,6 +5,7 @@ This study shows interactive plots using Shiny package.
 I have also created a model using linear regression to predict Expenses based on year.
 If you move the slider, to change the year(example : 1940 or 1950 etc), you will see predicted expenses for that year.
 Plot 1: This plot displays the Expenses based on the year and also the predicted expenses as per the model created.
-If click on the checkbox 'Show/hide Plot': you will be able to see additional plots that may be useful information about the data.
+
+When'Show/hide Plot'is checked, you will be able to see additional plots that may provide useful information about this dataset.
 Plot 2: This boxplot displays the overall Expenditure across the years.
 Plot 3: This boxplot displays the overall Expenditure across the expense categories(Medical, Food etc)
