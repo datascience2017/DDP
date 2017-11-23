@@ -25,7 +25,11 @@ In this study, we are using the dataset: US Personal Expenditure from the year 1
 ========================================================
 This study shows interactive plots using Shiny package. 
 
-The application can be viewed at: https://datascience2017coursera.shinyapps.io/Week4Assignment/
+The application can be viewed at Shiny Apps and Rpubs using the links below.
+
+Shiny Apps: https://datascience2017coursera.shinyapps.io/Week4Assignment/
+
+RPubs:http://rpubs.com/datascience2017Coursera/333235
 
 The application is build using Shiny package and the source code is in 2 files:
 - `ui.R`
@@ -33,7 +37,7 @@ The application is build using Shiny package and the source code is in 2 files:
 
 Both files can be found here: [GitHub repo](https://github.com/datascience2017/DDP/tree/master/Week4Assignment)
 
-Sumamry
+Summary
 ========================================================
 A model using linear regression has been created to predict Expenses based on year. 
 
@@ -44,4 +48,8 @@ Plot 1: This plot displays the Expenses based on the year and also the predicted
 If click on the checkbox 'Show/hide Plot': you will be able to see additional plots that may be useful information about the data. 
 Plot 2: This boxplot displays the overall Expenditure across the years.
 Plot 3: This boxplot displays the overall Expenditure across the expense categories(Medical, Food etc.).
+
+Plot
+========================================================
+![plot of chunk unnamed-chunk-2](server.R-figure/unnamed-chunk-2-1.png)![plot of chunk unnamed-chunk-2](server.R-figure/unnamed-chunk-2-2.png)![plot of chunk unnamed-chunk-2](server.R-figure/unnamed-chunk-2-3.png)
 
